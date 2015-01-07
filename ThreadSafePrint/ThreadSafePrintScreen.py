@@ -85,13 +85,17 @@ try:
 	
 	counter = 0
 	
+	counter_name = 1
+	
 	while int(counter) < int(cpu_count):
 		
-		thread_name = 'Thread ' + str("{0:03d}".format(counter))
+		thread_name = 'Thread ' + str("{0:03d}".format(counter_name))
 		
 		thread.start_new_thread( GenericThreadCode, (thread_name, ) )
 		
 		counter = int(counter) + 1
+		
+		counter_name = int(counter_name) + 1
 
 except:
 	
